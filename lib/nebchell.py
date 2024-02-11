@@ -3,24 +3,22 @@ from typing import Callable
 DEFAULT_SHELL_NAME = "n3bch4LL"
 DEFAULT_SHELL_QUITS = ["quit", "exit", "\\q"]
 
-
 class Nebchell:
-    """Quick Setup"""
-
-    # sh = Nebchell()
-    # fns = {
-    #     "help": sh.showHelp,
-    #     "print": print,
-    #     "min": min,
-    #     "max": max,
-    #     }
-    # hlps = {
-    #     "print": "print [text]",
-    #     "min": "min [listOfNum]",
-    #     "max": "max [listOfNum]",
-    # }
-    # sh.functions = fns
-    # sh.helps = hlps
+    """Quick Setup
+    \nsh = Nebchell()
+    \nfns = {
+    \n  "help": sh.showHelp,
+    \n  "": sh.dummy,
+    \n  ...
+    \n }
+    \nhlps = {
+    \n  "print": "print [text]",
+    \n  ...
+    \n}
+    \nsh.functions = fns
+    \nsh.helps = hlps
+    \nsh.startShell()
+    """
 
     def __init__(
         self,
@@ -33,6 +31,9 @@ class Nebchell:
         self.functions = functions
         self.helps = helps
         self.quits = quits
+
+    def dummy(self):
+        pass
 
     def extractPrompt(self, prompt: str) -> tuple[str, list]:
         """Extracts the command and arguments from a given input string"""
